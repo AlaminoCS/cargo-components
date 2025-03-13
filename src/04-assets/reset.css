@@ -1,0 +1,91 @@
+/* Reset CSS */
+
+/* Remove margens e paddings padrão */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define a caixa de conteúdo como border-box para todos os elementos */
+html {
+  font-size: 62.5%; /* 1rem = 10px (ajuste para facilitar cálculos) */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Define uma fonte padrão */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  font-size: 1.6rem; /* Tamanho de fonte base */
+  color: #333; /* Cor de texto padrão */
+  background-color: #fff; /* Cor de fundo padrão */
+  padding: 0;
+}
+
+/* Remove estilos de lista */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove sublinhado de links */
+a {
+  text-decoration: none;
+  color: inherit; /* Herda a cor do texto pai */
+}
+
+/* Remove bordas de campos de formulário */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Herda a fonte do elemento pai */
+  color: inherit; /* Herda a cor do texto pai */
+  border: none; /* Remove bordas padrão */
+  outline: none; /* Remove contorno ao focar */
+}
+
+/* Remove espaçamento interno de tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove estilos de cabeçalhos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit; /* Herda o tamanho de fonte do elemento pai */
+  font-weight: inherit; /* Herda o peso da fonte do elemento pai */
+}
+
+/* Remove estilos de imagens */
+img {
+  max-width: 100%; /* Garante que as imagens não ultrapassem seus containers */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaço em branco abaixo das imagens */
+}
+
+/* Remove estilos de botões */
+button {
+  cursor: pointer; /* Adiciona o cursor de clique aos botões */
+  background: none; /* Remove o fundo padrão */
+}
+
+/* Remove estilos de citações */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
