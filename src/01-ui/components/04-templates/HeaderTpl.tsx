@@ -48,6 +48,24 @@ const HeaderTpl = () => {
     },
   ];
 
+  const banners = [
+    {
+      imageUrl: 'https://via.placeholder.com/1200x400?text=Banner+1',
+      title: 'Bem-vindo ao Park and Co',
+      description: 'Descubra nossos serviços exclusivos.',
+    },
+    {
+      imageUrl: 'https://via.placeholder.com/1200x400?text=Banner+2',
+      title: 'Qualidade e Excelência',
+      description: 'Trabalhamos para superar suas expectativas.',
+    },
+    {
+      imageUrl: 'https://via.placeholder.com/1200x400?text=Banner+3',
+      title: 'Entre em Contato',
+      description: 'Estamos prontos para atender você!',
+    },
+  ];
+
   return (
     <TopNavProvider
       value={{
@@ -58,7 +76,7 @@ const HeaderTpl = () => {
     >
       <header>
         <TopNavOrg />
-        <BigImgCarousel />
+        <BigImgCarousel banners={banners} />
       </header>
     </TopNavProvider>
   )
