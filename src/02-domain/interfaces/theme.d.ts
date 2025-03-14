@@ -9,6 +9,8 @@ export interface Theme {
       danger: string;
       warning: string;
       info: string;
+      light: string;
+      dark: string;
     };
     spacing: {
       small: string;

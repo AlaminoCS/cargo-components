@@ -1,3 +1,5 @@
+import { light } from "@mui/material/styles/createPalette";
+
 export const cargoComponentsTheme = {
   colors: {
     primary: '#3498db',
@@ -8,6 +10,8 @@ export const cargoComponentsTheme = {
     danger: '#e74c3c',
     warning: '#f1c40f',
     info: '#3498db',
+    light: '#ffffff',
+    dark: '#000000'
   },
   spacing: {
     small: '8px',

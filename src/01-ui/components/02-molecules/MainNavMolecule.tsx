@@ -1,40 +1,35 @@
-import { IPropsLinkAtom } from '../../../02-domain/interfaces/ILinkAtom'
-import LinkAtom from '../01-atoms/LinkAtom'
+// src/01-ui/components/02-molecules/MainNavMolecule.tsx
+import React from 'react';
+import { IPropsLinkAtom } from '../../../02-domain/interfaces/ILinkAtom';
+import * as S from '../../../04-assets/styles/styles';
+import LinkAtom from '../01-atoms/LinkAtom';
 
-const MainNavMolecule = () => {
-  const linksAtom: IPropsLinkAtom[] = [
-    {
-      text: 'Quem somos',
-      href: '#quem-somos',
-    },
-    {
-      text: 'Nossos diferenciais',
-      href: '#nossos-diferenciais',
-    },
-    {
-      text: 'Serviços',
-      href: '#servicos',
-    },
-    {
-      text: 'Contato',
-      href: '#contato',
-    },
-  ]
+interface IProps {
+  logoSrc: string; 
+  links: IPropsLinkAtom[]; 
+}
 
+const MainNavMolecule: React.FC<IProps> = ({ logoSrc, links }) => {
   return (
-    <nav>
-      {linksAtom.map((item: IPropsLinkAtom, index: number) => {
-        return (
+    <S.MainNav>
+      {/* Logo */}
+      <S.Logo href="/" aria-label="Página inicial">
+        <img src={logoSrc} alt="Logo" />
+      </S.Logo>
+
+      {/* Links */}
+      <S.NavLinks>
+        {links.map((item: IPropsLinkAtom, index: number) => (
           <LinkAtom
             key={index}
             text={item.text}
             icon={item.icon}
             href={item.href}
           />
-        )
-      })}
-    </nav>
-  )
-}
+        ))}
+      </S.NavLinks>
+    </S.MainNav>
+  );
+};
 
-export default MainNavMolecule
+export default MainNavMolecule;
