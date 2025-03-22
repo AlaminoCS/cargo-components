@@ -1,22 +1,25 @@
-import { IImageAtom } from '../../../02-domain/interfaces/IImageAtom'
-import ImageAtom from '../01-atoms/ImageAtom'
-import ContentTitleTextMol from '../02-molecules/ContentTitleTextMol'
+import SectionWithImage from '../03-organisms/SectionWithImage';
+import { ISectionWithImage } from '../../../02-domain/interfaces/ISectionWithImage'
 
 const SectionWhoWeAreTpl = () => {
-  const image: IImageAtom = {
-    src: '#',
-    alt: 'quem somos',
-  }
+  const sectionData: ISectionWithImage = {
+    imagePosition: 'right', 
+    title: 'Quem somos',
+    description: `
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt placeat rem perspiciatis!</p>
+      <ul>
+        <li>Exercitationem iure ratione dolore aperiam.</li>
+        <li>Molestias magni, delectus possimus reprehenderit ut.</li>
+        <li>Similique ipsum minus? Voluptates veniam voluptas deleniti!</li>
+      </ul>
+    `,
+    image: {
+      src: '/assets/images/about-us.jpg',
+      alt: 'Quem somos',
+    },
+  };
 
-  return (
-    <section>
-      <ContentTitleTextMol
-        title="Quem somos"
-        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt placeat rem perspiciatis! Exercitationem iure ratione dolore aperiam, molestias magni, delectus possimus reprehenderit ut, similique ipsum minus? Voluptates veniam voluptas deleniti!"
-      />
-      <ImageAtom src={image.src} alt={image.alt} />
-    </section>
-  )
+  return <SectionWithImage {...sectionData} />;
 }
 
 export default SectionWhoWeAreTpl
