@@ -26,6 +26,10 @@ const CarouselContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    > div {
+      width: 100%; 
+    }
   }
 
   .banner {
@@ -35,15 +39,35 @@ const CarouselContainer = styled.div`
     background-position: center;
     color: white;
     text-align: center;
-    padding: 20px;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o banner */
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;    
+    }
+
+    h2, p {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 2;      
+      padding: 10px 20px;
+    }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      bottom: 60px;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
+      bottom: 20px;
     }
   }
 `;
@@ -64,7 +88,8 @@ const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
     <CarouselContainer>
       <Slider {...settings}>
         {banners.map((banner, index) => (
-          <div key={index} className="banner" style={{ backgroundImage: `url(${banner.imageUrl})` }}>
+          <div key={index} className="banner">
+            <img src={banner.imageUrl} alt={banner.title} />
             <h2>{banner.title}</h2>
             <p>{banner.description}</p>
           </div>
