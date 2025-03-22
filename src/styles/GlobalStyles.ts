@@ -1,10 +1,40 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  /* Importação das fontes */
+  @font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/robotocondensed/v25/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQ.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.gstatic.com/s/robotocondensed/v25/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQ.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.woff2') format('woff2');
+  }
+
+  /* Estilos globais */
   body {
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
-    font-family: ${(props) => props.theme.fonts.main};
+    font-family: 'Open Sans', sans-serif; // Fonte padrão para o corpo do texto
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -12,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     color: ${(props) => props.theme.colors.primary};
-    font-family: ${(props) => props.theme.fonts.heading};
+    font-family: 'Roboto Condensed', sans-serif; // Fonte para títulos
     margin-top: ${(props) => props.theme.spacing.medium};
     margin-bottom: ${(props) => props.theme.spacing.small};
   }
@@ -45,12 +75,14 @@ const GlobalStyles = createGlobalStyle`
 
   p {
     margin-bottom: ${(props) => props.theme.spacing.medium};
+    font-family: 'Open Sans', sans-serif; // Fonte para parágrafos
   }
 
   a {
     color: ${(props) => props.theme.colors.info};
     text-decoration: none;
     transition: ${(props) => props.theme.transitions.default};
+    font-family: 'Open Sans', sans-serif; // Fonte para links
 
     &:hover {
       color: ${(props) => props.theme.colors.primary};
@@ -64,7 +96,7 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     padding: ${(props) => props.theme.spacing.small} ${(props) => props.theme.spacing.medium};
     border-radius: ${(props) => props.theme.borderRadius.small};
-    font-family: ${(props) => props.theme.fonts.main};
+    font-family: 'Open Sans', sans-serif; // Fonte para botões
     cursor: pointer;
     transition: ${(props) => props.theme.transitions.default};
 
@@ -85,7 +117,7 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: ${(props) => props.theme.spacing.medium};
     border: 1px solid ${(props) => props.theme.colors.secondary};
     border-radius: ${(props) => props.theme.borderRadius.small};
-    font-family: ${(props) => props.theme.fonts.main};
+    font-family: 'Open Sans', sans-serif; // Fonte para inputs
     transition: ${(props) => props.theme.transitions.default};
 
     &:focus {
@@ -98,6 +130,7 @@ const GlobalStyles = createGlobalStyle`
     display: block;
     margin-bottom: ${(props) => props.theme.spacing.small};
     font-weight: bold;
+    font-family: 'Open Sans', sans-serif; // Fonte para labels
   }
 
   img {
@@ -108,6 +141,7 @@ const GlobalStyles = createGlobalStyle`
   ul, ol {
     margin-bottom: ${(props) => props.theme.spacing.medium};
     padding-left: ${(props) => props.theme.spacing.medium};
+    font-family: 'Open Sans', sans-serif; // Fonte para listas
   }
 
   li {
@@ -115,7 +149,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   code {
-    font-family: ${(props) => props.theme.fonts.code};
+    font-family: 'Open Sans', sans-serif; // Fonte para código
     background-color: ${(props) => props.theme.colors.secondary};
     padding: ${(props) => props.theme.spacing.small};
     border-radius: ${(props) => props.theme.borderRadius.small};

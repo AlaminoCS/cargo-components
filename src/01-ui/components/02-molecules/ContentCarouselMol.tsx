@@ -6,7 +6,7 @@ import { IOurServices } from '../../../02-domain/interfaces/IOurServices';
 
 // Props do componente
 interface ContentCarouselMolProps {
-  services: IOurServices[]; // Array de serviços
+  services: IOurServices[];
 }
 
 // Estilização do carrossel
@@ -16,19 +16,31 @@ const CarouselContainer = styled.div`
   max-width: 1200px;
 
   .slick-slide {
-    display: flex;
+    display: flex !important;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .slick-list {
+    overflow: hidden;
   }
 
   .card {
-    background-color: ${(props) => props.theme.colors.background};
-    border: 1px solid ${(props) => props.theme.colors.secondary};
-    border-radius: ${(props) => props.theme.borderRadius.medium};
-    padding: ${(props) => props.theme.spacing.large};
+    background-color: ${(props) => props.theme.colors.background};    
     text-align: center;
     max-width: 300px;
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      padding: 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     img {
       width: 100%;
@@ -37,12 +49,12 @@ const CarouselContainer = styled.div`
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin: ${(props) => props.theme.spacing.medium} 0;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: ${(props) => props.theme.colors.text};
     }
   }
@@ -84,8 +96,10 @@ const ContentCarouselMol: React.FC<ContentCarouselMolProps> = ({ services }) => 
             <figure>
               <img src={item.image} alt={item.title} />
             </figure>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
+            <div className='content'>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+            </div>            
           </div>
         ))}
       </Slider>

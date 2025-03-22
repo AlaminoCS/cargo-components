@@ -58,11 +58,12 @@ const CarouselContainer = styled.div`
       margin: 0 auto;
       z-index: 2;      
       padding: 10px 20px;
+      color: #fff;
     }
 
     h2 {
       font-size: 3rem;
-      bottom: 60px;
+      bottom: 60px;      
     }
 
     p {

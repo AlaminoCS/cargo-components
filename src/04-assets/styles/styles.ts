@@ -24,7 +24,7 @@ export const ContactNav = styled.nav`
 
 export const MainNav = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between; // Alinha o logo à esquerda e os links ao centro
   align-items: center;
   padding: ${(props) => props.theme.spacing.medium};
   background-color: ${(props) => props.theme.colors.light};
@@ -46,6 +46,7 @@ export const Logo = styled.a`
 export const NavLinks = styled.div`
   display: flex;
   gap: ${(props) => props.theme.spacing.medium};
+  margin: 0 auto; // Centraliza os links no espaço restante
 
   a {
     color: ${(props) => props.theme.colors.text};
