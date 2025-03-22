@@ -6,8 +6,6 @@ const SectionContainerImageTpl = () => {
   const IMAGES = {
     img1: new URL('../../../04-assets/images/imagem-separadora.jpg', import.meta.url).href,
   }
-
-
   
   const image: IImageAtom = {
     src: IMAGES.img1,

@@ -1,5 +1,3 @@
-import { light } from "@mui/material/styles/createPalette";
-
 export const cargoComponentsTheme = {
   colors: {
     primary: '#3498db',

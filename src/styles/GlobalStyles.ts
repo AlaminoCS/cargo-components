@@ -78,6 +78,18 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif; // Fonte para parágrafos
   }
 
+  figure {
+    margin: 0;
+  }
+
+  #root {
+    > div {
+      > section, figure {
+        margin-bottom: 3rem; 
+      }  
+    }
+  }
+
   a {
     color: ${(props) => props.theme.colors.info};
     text-decoration: none;
