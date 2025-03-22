@@ -12,6 +12,10 @@ const SectionContainer = styled.section`
   gap: ${(props) => props.theme.spacing.large};
   padding: ${(props) => props.theme.spacing.large} 0;
 
+  p {
+    text-align: center;
+  }
+
   @media (min-width: 768px) {
     gap: ${(props) => props.theme.spacing.xlarge};
   }
