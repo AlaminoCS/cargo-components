@@ -5,7 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const HeaderTpl = () => {
+const HeaderTpl: React.FC = () => {
 
   const IMAGES = {
     logo: new URL('../../../04-assets/images/logo.png', import.meta.url).href,

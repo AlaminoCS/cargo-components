@@ -12,7 +12,7 @@ export const ContactNav = styled.nav`
   box-shadow: ${(props) => props.theme.shadows.small};
 
   a {
-    color: ${(props) => props.theme.colors.text};
+    color: #fff;
     margin: 0 ${(props) => props.theme.spacing.medium};
     text-decoration: none;
 

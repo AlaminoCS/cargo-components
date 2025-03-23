@@ -4,7 +4,7 @@ import ContentTitleTextMol from '../02-molecules/ContentTitleTextMol'
 import SectionWithImage from '../03-organisms/SectionWithImage';
 import { ISectionWithImage } from '../../../02-domain/interfaces/ISectionWithImage'
 
-const SectionDifferentialsTpl = () => {
+const SectionDifferentialsTpl: React.FC = () => {
 
   const IMAGES = {
     img1: new URL('../../../04-assets/images/diferenciais.jpg', import.meta.url).href,

@@ -1,7 +1,7 @@
 import SectionWithImage from '../03-organisms/SectionWithImage';
 import { ISectionWithImage } from '../../../02-domain/interfaces/ISectionWithImage'
 
-const SectionWhoWeAreTpl = () => {
+const SectionWhoWeAreTpl: React.FC = () => {
 
   const IMAGES = {
     img1: new URL('../../../04-assets/images/quem-somos.jpg', import.meta.url).href,

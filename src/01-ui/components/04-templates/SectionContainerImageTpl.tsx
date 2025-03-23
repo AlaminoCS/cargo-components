@@ -1,7 +1,7 @@
 import { IImageAtom } from '../../../02-domain/interfaces/IImageAtom'
 import ImageAtom from '../01-atoms/ImageAtom'
 
-const SectionContainerImageTpl = () => {
+const SectionContainerImageTpl: React.FC = () => {
 
   const IMAGES = {
     img1: new URL('../../../04-assets/images/imagem-separadora.jpg', import.meta.url).href,
