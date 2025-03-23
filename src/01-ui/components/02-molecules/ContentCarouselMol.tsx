@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import { IOurServices } from '../../../02-domain/interfaces/IOurServices';
+import { Typography } from '@mui/material';
 
 // Props do componente
 interface ContentCarouselMolProps {
@@ -48,14 +49,13 @@ const CarouselContainer = styled.div`
       border-radius: ${(props) => props.theme.borderRadius.medium};
     }
 
-    h2 {
-      font-size: 1.8rem;
+    h4 {
       margin: ${(props) => props.theme.spacing.medium} 0;
     }
 
     p {
-      font-size: 1.2rem;
       color: ${(props) => props.theme.colors.text};
+      font-size: 16px !important;
     }
   }
 `;
@@ -97,8 +97,13 @@ const ContentCarouselMol: React.FC<ContentCarouselMolProps> = ({ services }) => 
               <img src={item.image} alt={item.title} />
             </figure>
             <div className='content'>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
+              <Typography variant="h4" align="center" gutterBottom>
+                {item.title}
+              </Typography>
+
+              <Typography variant="body1" align="left" paragraph>
+                {item.description}
+              </Typography>
             </div>            
           </div>
         ))}

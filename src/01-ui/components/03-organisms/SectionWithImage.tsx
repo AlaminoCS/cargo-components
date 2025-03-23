@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ISectionWithImage } from '../../../02-domain/interfaces/ISectionWithImage';
 import ImageAtom from '../01-atoms/ImageAtom';
+import { Typography } from '@mui/material';
 
 // Estilização do componente
 const SectionContainer = styled.section`
@@ -34,14 +35,11 @@ const SectionContainer = styled.section`
   }
 
   h2 {
-    font-size: 2rem;
     color: ${(props) => props.theme.colors.primary};
     margin-bottom: ${(props) => props.theme.spacing.medium};
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.6;
     color: ${(props) => props.theme.colors.text};
   }
 `;
@@ -60,7 +58,9 @@ const SectionWithImage: React.FC<ISectionWithImage> = ({
             <ImageAtom src={image.src} alt={image.alt} />
           </div>
           <div className="content">
-            <h2>{title}</h2>
+            <Typography variant="h2" align="left" gutterBottom>
+              {title}
+            </Typography>
             <div dangerouslySetInnerHTML={{ __html: description }} />
           </div>
         </>
@@ -68,7 +68,9 @@ const SectionWithImage: React.FC<ISectionWithImage> = ({
       {imagePosition === 'right' && (
         <>
           <div className="content">
-            <h2>{title}</h2>
+            <Typography variant="h2" align="left" gutterBottom>
+              {title}
+            </Typography>
             <div dangerouslySetInnerHTML={{ __html: description }} />
           </div>
           <div className="image-container">

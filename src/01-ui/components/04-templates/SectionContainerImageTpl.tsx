@@ -1,22 +1,15 @@
-import { IImageAtom } from '../../../02-domain/interfaces/IImageAtom'
-import ImageAtom from '../01-atoms/ImageAtom'
+// src/01-ui/components/04-templates/SectionContainerImageTpl.tsx
+import React from 'react';
+import ImageAtom from '../01-atoms/ImageAtom';
+import { ISectionContainerImageProps } from '../../../02-domain/interfaces/ISectionContainerImageProps';
+import { Container } from '@mui/material';
 
-const SectionContainerImageTpl: React.FC = () => {
-
-  const IMAGES = {
-    img1: new URL('../../../04-assets/images/imagem-separadora.jpg', import.meta.url).href,
-  }
-  
-  const image: IImageAtom = {
-    src: IMAGES.img1,
-    alt: 'imagem separadora',
-  }
-
+const SectionContainerImageTpl: React.FC<ISectionContainerImageProps> = ({ image }) => {
   return (
-    <>
+    <section>
       <ImageAtom src={image.src} alt={image.alt} />
-    </>
+    </section>
   )
-}
+};
 
-export default SectionContainerImageTpl
+export default SectionContainerImageTpl;

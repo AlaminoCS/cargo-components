@@ -1,18 +1,16 @@
-// src/styles/ContactNav.ts
 import styled from 'styled-components';
 
 export const ContactNav = styled.nav`
   background-color: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.text};
-  height: 50px;
+  color: ${(props) => props.theme.colors.text};  
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: ${(props) => props.theme.fonts.main};
-  box-shadow: ${(props) => props.theme.shadows.small};
+  box-shadow: ${(props) => props.theme.shadows.small};  
 
   a {
-    color: #fff;
+    color: #fff !important;
     margin: 0 ${(props) => props.theme.spacing.medium};
     text-decoration: none;
 

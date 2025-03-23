@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
-  /* Importação das fontes */
+const GlobalStyles = createGlobalStyle`  
   @font-face {
     font-family: 'Roboto Condensed';
     font-style: normal;
@@ -31,20 +30,36 @@ const GlobalStyles = createGlobalStyle`
   }
 
   /* Estilos globais */
+
+  /* Habilita rolagem suave para toda a página */
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
-    font-family: 'Open Sans', sans-serif; // Fonte padrão para o corpo do texto
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
   }
 
+  header{
+    &#home{
+      margin-bottom: 4rem;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     color: ${(props) => props.theme.colors.primary};
-    font-family: 'Roboto Condensed', sans-serif; // Fonte para títulos
+    font-family: 'Roboto Condensed', sans-serif !important;
     margin-top: ${(props) => props.theme.spacing.medium};
     margin-bottom: ${(props) => props.theme.spacing.small};
+  }
+
+  strong, a {
+    color: ${(props) => props.theme.colors.primary} !important;
   }
 
   h1 {
@@ -82,11 +97,23 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  /* Aplica margem inferior e background alternado para sections */
   #root {
-    > div {
-      > section, figure {
-        margin-bottom: 3rem; 
-      }  
+    
+  
+    > section, > figure {
+      /* Fundo cinza claro para sections em posições pares */
+      &:nth-of-type(even) {
+        background-color: #f9f9f9; /* Cinza claro */
+        padding: 2rem;
+      }
+
+      /* Fundo padrão para sections em posições ímpares */
+      &:nth-of-type(odd) {
+        background-color: transparent; /* Sem fundo */
+      }
+
+      margin-bottom: 3rem;      
     }
   }
 

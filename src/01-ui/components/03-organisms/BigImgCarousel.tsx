@@ -3,6 +3,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
+import { Typography } from '@mui/material';
 
 // Tipagem dos dados do banner
 interface Banner {
@@ -21,6 +22,7 @@ const CarouselContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   max-width: 1200px;
+  margin-top: 113px;
 
   .slick-slide {
     display: flex;
@@ -91,7 +93,9 @@ const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
         {banners.map((banner, index) => (
           <div key={index} className="banner">
             <img src={banner.imageUrl} alt={banner.title} />
-            <h2>{banner.title}</h2>
+              <Typography variant="h2" align="center" gutterBottom>
+                {banner.title}
+              </Typography>
             <p>{banner.description}</p>
           </div>
         ))}

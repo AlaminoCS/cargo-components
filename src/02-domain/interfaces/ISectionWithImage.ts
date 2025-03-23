@@ -1,10 +1,11 @@
 // src/02-domain/interfaces/ISectionWithImage.ts
 export interface ISectionWithImage {
-  imagePosition: 'left' | 'right'; // Posição da imagem
-  title: string; // Título da seção
-  description: string; // Descrição (pode ser HTML ou Markdown)
+  imagePosition: 'left' | 'right';
+  title: string;
+  description: string;
   image: {
-    src: string; // URL ou caminho da imagem
-    alt: string; // Texto alternativo da imagem
+    src: string;
+    alt: string;
   };
+  id: string;
 }

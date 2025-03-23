@@ -1,3 +1,4 @@
+// src/index.tsx
 export { default as Button } from './Button';
 export { lightTheme, darkTheme } from './theme';
 export { default as GlobalStyles } from './styles/GlobalStyles';
@@ -18,5 +19,12 @@ export { default as HeaderTpl } from './01-ui/components/04-templates/HeaderTpl'
 export { default as SectionContainerImageTpl } from './01-ui/components/04-templates/SectionContainerImageTpl';
 export { default as SectionDifferentialsTpl } from './01-ui/components/04-templates/SectionDifferentialsTpl';
 export { default as SectionWhoWeAreTpl } from './01-ui/components/04-templates/SectionWhoWeAreTpl';
+export { default as ContactForm } from './01-ui/components/04-templates/ContactForm';
+
+// Exportar interfaces
+export type { IContactLink, IMainLink, IBanner, IHeaderProps } from './02-domain/interfaces/IHeaderProps';
+export type { IService, ISectionOurServicesProps } from './02-domain/interfaces/ISectionOurServices';
+export type { ISectionContainerImageProps } from './02-domain/interfaces/ISectionContainerImageProps';
+export type { ISectionDifferentialsProps } from './02-domain/interfaces/ISectionDifferentialsProps';
 
 export { TopNavProvider } from './05-contexts/TopNavContext';

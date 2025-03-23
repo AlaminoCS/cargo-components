@@ -1,9 +1,10 @@
 // src/02-domain/interfaces/ISectionLocation.ts
 export interface ISectionLocation {
-  title: string; // Título da seção
-  text: string; // Texto descritivo
+  title: string;
+  text: string;
   map: {
-    title: string; // Título do iframe do mapa
-    src: string; // URL do iframe do Google Maps
+    title: string;
+    src: string;
   };
+  id: string
 }
