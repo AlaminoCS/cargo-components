@@ -1,15 +1,15 @@
 export const cargoComponentsTheme = {
   colors: {
-    primary: '#3498db',
-    secondary: '#ecf0f1',
-    background: '#ffffff',
-    text: '#333333',
-    success: '#2ecc71',
-    danger: '#e74c3c',
-    warning: '#f1c40f',
-    info: '#3498db',
-    light: '#ffffff',
-    dark: '#000000'
+    primary: '#FFA500', // Laranja principal
+    secondary: '#FFD700', // Amarelo dourado
+    background: '#ffffff', // Fundo branco
+    text: '#333333', // Texto escuro
+    success: '#2ecc71', // Verde sucesso
+    danger: '#e74c3c', // Vermelho perigo
+    warning: '#f1c40f', // Amarelo aviso
+    info: '#3498db', // Azul informativo
+    light: '#ffffff', // Branco claro
+    dark: '#000000', // Preto
   },
   spacing: {
     small: '8px',
@@ -43,4 +43,4 @@ export const cargoComponentsTheme = {
   transitions: {
     default: 'all 0.3s ease-in-out',
   },
-}
+};

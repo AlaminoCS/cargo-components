@@ -58,6 +58,13 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: ${(props) => props.theme.spacing.small};
   }
 
+  #contato{
+    button {
+      background: ${(props) => props.theme.colors.primary} !important;
+      color: ${(props) => props.theme.colors.light} !important;
+    }
+  }  
+
   strong, a {
     color: ${(props) => props.theme.colors.primary} !important;
   }

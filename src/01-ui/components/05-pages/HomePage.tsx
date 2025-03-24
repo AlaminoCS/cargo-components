@@ -1,20 +1,21 @@
-import SectionOurServicesOrg from '../03-organisms/SectionOurServicesOrg'
-import HeaderTpl from '../04-templates/HeaderTpl'
-import SectionContainerImageTpl from '../04-templates/SectionContainerImageTpl'
-import SectionDifferentialsTpl from '../04-templates/SectionDifferentialsTpl'
-import SectionLocationTpl from '../04-templates/SectionLocationTpl'
-import SectionWhoWeAreTpl from '../04-templates/SectionWhoWeAreTpl'
-import EmailIcon from '@mui/icons-material/Email'
-import PhoneIcon from '@mui/icons-material/Phone'
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import { ISectionOurServicesProps, IService } from '../../../02-domain/interfaces/ISectionOurServices'
-import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISectionDifferentialsProps'
-import { ISectionWhoWeAreProps } from '../../../02-domain/interfaces/ISectionWhoWeAreProps'
-import ContactForm from '../04-templates/ContactForm'
-
+// src/components/05-pages/HomePage.tsx
+import React from 'react';
+import SectionOurServicesOrg from '../03-organisms/SectionOurServicesOrg';
+import HeaderTpl from '../04-templates/HeaderTpl';
+import SectionContainerImageTpl from '../04-templates/SectionContainerImageTpl';
+import SectionDifferentialsTpl from '../04-templates/SectionDifferentialsTpl';
+import SectionLocationTpl from '../04-templates/SectionLocationTpl';
+import SectionWhoWeAreTpl from '../04-templates/SectionWhoWeAreTpl';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { ISectionOurServicesProps, IService } from '../../../02-domain/interfaces/ISectionOurServices';
+import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISectionDifferentialsProps';
+import { ISectionWhoWeAreProps } from '../../../02-domain/interfaces/ISectionWhoWeAreProps';
+import ContactForm from '../04-templates/ContactForm';
+import SectionWithImages from '../04-templates/SectionWithImages'; // Importa o novo componente
 
 const HomePage = () => {
-
   const IMAGES = {
     logo: new URL('../../../04-assets/images/logo.png', import.meta.url).href,
     banner: new URL('../../../04-assets/images/banner.png', import.meta.url).href,
@@ -26,8 +27,12 @@ const HomePage = () => {
     servicos3: new URL('../../../04-assets/images/nossos-servicos-3.jpg', import.meta.url).href,
     separadora: new URL('../../../04-assets/images/imagem-separadora.jpg', import.meta.url).href,
     diferenciais: new URL('../../../04-assets/images/diferenciais.jpg', import.meta.url).href,
-    quemSomos: new URL('../../../04-assets/images/quem-somos.jpg', import.meta.url).href
-  }
+    quemSomos: new URL('../../../04-assets/images/quem-somos.jpg', import.meta.url).href,
+    imagem1: new URL('../../../04-assets/images/imagem1.jpg', import.meta.url).href,
+    imagem2: new URL('../../../04-assets/images/imagem2.jpg', import.meta.url).href,
+    imagem3: new URL('../../../04-assets/images/imagem3.jpg', import.meta.url).href,
+    imagem4: new URL('../../../04-assets/images/imagem4.jpg', import.meta.url).href,
+  };
 
   const contactLinks = [
     {
@@ -102,7 +107,7 @@ const HomePage = () => {
       title: 'Localização no Google Maps',
       src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.5213618891225!2d-47.458225425423954!3d-23.513743559843032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a84ebf90e83%3A0xaaba7d54565fad40!2sAv.%20Comendador%20Pereira%20In%C3%A1cio%2C%20900%20-%20Jardim%20Vergueiro%2C%20Sorocaba%20-%20SP%2C%2018030-005!5e0!3m2!1spt-BR!2sbr!4v1741374513958!5m2!1spt-BR!2sbr',
     },
-    id: 'localizacao'
+    id: 'localizacao',
   };
 
   const ourServices: IService[] = [
@@ -129,7 +134,7 @@ const HomePage = () => {
   const sectionData: ISectionOurServicesProps = {
     sectionTitle: 'Conheça nossos serviços',
     services: ourServices,
-    id: 'servicos'
+    id: 'servicos',
   };
 
   const imageData = {
@@ -182,10 +187,10 @@ const HomePage = () => {
         src: IMAGES.diferenciais,
         alt: 'Diferenciais',
       },
-      id: 'nossos-diferenciais'
+      id: 'nossos-diferenciais',
     },
   };
-  
+
   const whoWeAreData: ISectionWhoWeAreProps = {
     sectionData: {
       imagePosition: 'right',
@@ -209,10 +214,19 @@ const HomePage = () => {
         src: IMAGES.quemSomos,
         alt: 'Quem somos',
       },
-      id: 'quem-somos'
-    }    
+      id: 'quem-somos',
+    },
   };
 
+  const sectionWithImagesText =
+    'O Park & Co. oferece uma diversidade de ações para seus clientes, contando com as tecnologias mais avançadas disponíveis para administração de estacionamento. Proporcionamos a todos maior conforto, segurança e acessibilidade. Realizamos serviços de implantação, viabilidade, otimização de espaço para que sua área seja rentável e bem aproveitada.';
+
+  const sectionWithImagesImages = [
+    IMAGES.imagem1,
+    IMAGES.imagem2,
+    IMAGES.imagem3,
+    IMAGES.imagem4,
+  ];
 
   return (
     <>
@@ -223,8 +237,9 @@ const HomePage = () => {
       <SectionDifferentialsTpl {...differentialData} />
       <SectionLocationTpl {...locationData} />
       <ContactForm phoneNumber="5515981377293" />
+      <SectionWithImages text={sectionWithImagesText} images={sectionWithImagesImages} />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
