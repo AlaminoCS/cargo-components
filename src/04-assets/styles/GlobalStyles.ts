@@ -63,7 +63,13 @@ const GlobalStyles = createGlobalStyle`
       background: ${(props) => props.theme.colors.primary} !important;
       color: ${(props) => props.theme.colors.light} !important;
     }
-  }  
+  }
+
+  footer {
+    strong {
+      color: #FFA500 !important;
+    }
+  }
 
   strong, a {
     color: ${(props) => props.theme.colors.primary} !important;

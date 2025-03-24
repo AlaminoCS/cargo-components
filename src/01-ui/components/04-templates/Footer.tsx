@@ -7,45 +7,45 @@ const Footer: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md')); // Detecta se é mobile
 
   return (
-    <Box
-      sx={{
-        backgroundColor: '#272a31', // Cor de fundo
-        color: '#fff', // Cor do texto
-        padding: '20px 0', // Padding superior e inferior
-      }}
-    >
-      {/* Container com largura fixa (md) */}
-      <Container maxWidth="md">
-        <Grid
-          container
-          spacing={2}
-          alignItems="center"
-          justifyContent={isMobile ? 'center' : 'space-between'}
-        >
-          {/* Coluna da esquerda */}
-          <Grid item xs={12} md={6}>
-            <Typography
-              variant="body2"
-              align={isMobile ? 'center' : 'left'} // Centraliza no mobile, alinha à esquerda no desktop
-              sx={{ fontWeight: 'normal', fontSize: '16px' }}
-            >
-              ©️ Copyright 2025 - Todos os direitos reservados
-            </Typography>
-          </Grid>
+    <footer>
+      <Box
+        sx={{
+          backgroundColor: '#272a31',
+          color: '#fff',
+          padding: '20px 0',
+        }}
+      >
+        <Container maxWidth="md">
+          <Grid
+            container
+            spacing={2}
+            alignItems="center"
+            justifyContent={isMobile ? 'center' : 'space-between'}
+          >
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="body2"
+                align={isMobile ? 'center' : 'left'}
+                sx={{ fontWeight: 'normal', fontSize: '16px' }}
+              >
+                ©️ Copyright 2025 - Todos os direitos reservados
+              </Typography>
+            </Grid>
 
-          {/* Coluna da direita */}
-          <Grid item xs={12} md={6}>
-            <Typography
-              variant="body2"
-              align={isMobile ? 'center' : 'right'} // Centraliza no mobile, alinha à direita no desktop
-              sx={{ fontWeight: 'normal', fontSize: '16px' }}
-            >
-              Feito com ❤️ por Alamino Code Solutions
-            </Typography>
+            {/* Coluna da direita */}
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="body2"
+                align={isMobile ? 'center' : 'right'}
+                sx={{ fontWeight: 'normal', fontSize: '16px' }}
+              >
+                Feito com ❤️ por <strong>Alamino Code Solutions</strong>
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </footer>
   );
 };
 

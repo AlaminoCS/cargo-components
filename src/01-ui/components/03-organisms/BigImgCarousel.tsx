@@ -65,7 +65,11 @@ const CarouselContainer = styled.div`
 
     h2 {
       font-size: 3rem;
-      bottom: 60px;      
+      bottom: 60px;
+
+      @media (max-width: 768px) {
+        bottom: 120px;
+      }
     }
 
     p {
