@@ -14,6 +14,7 @@ import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISecti
 import { ISectionWhoWeAreProps } from '../../../02-domain/interfaces/ISectionWhoWeAreProps';
 import ContactForm from '../04-templates/ContactForm';
 import SectionWithImages from '../04-templates/SectionWithImages'; // Importa o novo componente
+import Footer from '../04-templates/Footer';
 
 const HomePage = () => {
   const IMAGES = {
@@ -238,6 +239,7 @@ const HomePage = () => {
       <SectionLocationTpl {...locationData} />
       <ContactForm phoneNumber="5515981377293" />
       <SectionWithImages text={sectionWithImagesText} images={sectionWithImagesImages} />
+      <Footer />
     </>
   );
 };

@@ -20,11 +20,14 @@ export { default as SectionContainerImageTpl } from './01-ui/components/04-templ
 export { default as SectionDifferentialsTpl } from './01-ui/components/04-templates/SectionDifferentialsTpl';
 export { default as SectionWhoWeAreTpl } from './01-ui/components/04-templates/SectionWhoWeAreTpl';
 export { default as ContactForm } from './01-ui/components/04-templates/ContactForm';
+export { default as SectionWithImages } from './01-ui/components/04-templates/SectionWithImages';
+export { default as Footer } from './01-ui/components/04-templates/Footer';
 
 // Exportar interfaces
 export type { IContactLink, IMainLink, IBanner, IHeaderProps } from './02-domain/interfaces/IHeaderProps';
 export type { IService, ISectionOurServicesProps } from './02-domain/interfaces/ISectionOurServices';
 export type { ISectionContainerImageProps } from './02-domain/interfaces/ISectionContainerImageProps';
 export type { ISectionDifferentialsProps } from './02-domain/interfaces/ISectionDifferentialsProps';
+export type { ISectionWhoWeAreProps } from './02-domain/interfaces/ISectionWhoWeAreProps';
 
 export { TopNavProvider } from './05-contexts/TopNavContext';
