@@ -40,8 +40,7 @@ const Footer: React.FC = () => {
               align={isMobile ? 'center' : 'right'} // Centraliza no mobile, alinha à direita no desktop
               sx={{ fontWeight: 'normal', fontSize: '16px' }}
             >
-              Feito com ❤️ por{' '}
-              <strong style={{ fontWeight: 'bold' }}>Alamino Code Solutions</strong>
+              Feito com ❤️ por Alamino Code Solutions
             </Typography>
           </Grid>
         </Grid>
