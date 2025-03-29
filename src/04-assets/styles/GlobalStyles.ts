@@ -34,11 +34,12 @@ const GlobalStyles = createGlobalStyle`
   /* Habilita rolagem suave para toda a página */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 150px;
   }
 
   body {
-    background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
@@ -52,16 +53,16 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${props => props.theme.colors.primary};
     font-family: 'Roboto Condensed', sans-serif !important;
-    margin-top: ${(props) => props.theme.spacing.medium};
-    margin-bottom: ${(props) => props.theme.spacing.small};
+    margin-top: ${props => props.theme.spacing.medium};
+    margin-bottom: ${props => props.theme.spacing.small};
   }
 
   #contato{
     button {
-      background: ${(props) => props.theme.colors.primary} !important;
-      color: ${(props) => props.theme.colors.light} !important;
+      background: ${props => props.theme.colors.primary} !important;
+      color: ${props => props.theme.colors.light} !important;
     }
   }
 
@@ -72,37 +73,37 @@ const GlobalStyles = createGlobalStyle`
   }
 
   strong, a {
-    color: ${(props) => props.theme.colors.primary} !important;
+    color: ${props => props.theme.colors.primary} !important;
   }
 
   h1 {
-    font-size: ${(props) => props.theme.fontSizes.h1};
+    font-size: ${props => props.theme.fontSizes.h1};
     text-align: center;
-    margin-top: ${(props) => props.theme.spacing.large};
+    margin-top: ${props => props.theme.spacing.large};
   }
 
   h2 {
-    font-size: ${(props) => props.theme.fontSizes.h2};
+    font-size: ${props => props.theme.fontSizes.h2};
   }
 
   h3 {
-    font-size: ${(props) => props.theme.fontSizes.h3};
+    font-size: ${props => props.theme.fontSizes.h3};
   }
 
   h4 {
-    font-size: ${(props) => props.theme.fontSizes.h4};
+    font-size: ${props => props.theme.fontSizes.h4};
   }
 
   h5 {
-    font-size: ${(props) => props.theme.fontSizes.h5};
+    font-size: ${props => props.theme.fontSizes.h5};
   }
 
   h6 {
-    font-size: ${(props) => props.theme.fontSizes.h6};
+    font-size: ${props => props.theme.fontSizes.h6};
   }
 
   p {
-    margin-bottom: ${(props) => props.theme.spacing.medium};
+    margin-bottom: ${props => props.theme.spacing.medium};
     font-family: 'Open Sans', sans-serif; // Fonte para parágrafos
   }
 
@@ -131,56 +132,56 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: ${(props) => props.theme.colors.info};
+    color: ${props => props.theme.colors.info};
     text-decoration: none;
-    transition: ${(props) => props.theme.transitions.default};
+    transition: ${props => props.theme.transitions.default};
     font-family: 'Open Sans', sans-serif; // Fonte para links
 
     &:hover {
-      color: ${(props) => props.theme.colors.primary};
+      color: ${props => props.theme.colors.primary};
       text-decoration: underline;
     }
   }
 
   button {
-    background-color: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.light};
+    background-color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.light};
     border: none;
-    padding: ${(props) => props.theme.spacing.small} ${(props) => props.theme.spacing.medium};
-    border-radius: ${(props) => props.theme.borderRadius.small};
+    padding: ${props => props.theme.spacing.small} ${props => props.theme.spacing.medium};
+    border-radius: ${props => props.theme.borderRadius.small};
     font-family: 'Open Sans', sans-serif; // Fonte para botões
     cursor: pointer;
-    transition: ${(props) => props.theme.transitions.default};
+    transition: ${props => props.theme.transitions.default};
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.secondary};
-      color: ${(props) => props.theme.colors.primary};
+      background-color: ${props => props.theme.colors.secondary};
+      color: ${props => props.theme.colors.primary};
     }
 
     &:disabled {
-      background-color: ${(props) => props.theme.colors.secondary};
+      background-color: ${props => props.theme.colors.secondary};
       cursor: not-allowed;
     }
   }
 
   input, textarea, select {
     width: 100%;
-    padding: ${(props) => props.theme.spacing.small};
-    margin-bottom: ${(props) => props.theme.spacing.medium};
-    border: 1px solid ${(props) => props.theme.colors.secondary};
-    border-radius: ${(props) => props.theme.borderRadius.small};
+    padding: ${props => props.theme.spacing.small};
+    margin-bottom: ${props => props.theme.spacing.medium};
+    border: 1px solid ${props => props.theme.colors.secondary};
+    border-radius: ${props => props.theme.borderRadius.small};
     font-family: 'Open Sans', sans-serif; // Fonte para inputs
-    transition: ${(props) => props.theme.transitions.default};
+    transition: ${props => props.theme.transitions.default};
 
     &:focus {
-      border-color: ${(props) => props.theme.colors.primary};
+      border-color: ${props => props.theme.colors.primary};
       outline: none;
     }
   }
 
   label {
     display: block;
-    margin-bottom: ${(props) => props.theme.spacing.small};
+    margin-bottom: ${props => props.theme.spacing.small};
     font-weight: bold;
     font-family: 'Open Sans', sans-serif; // Fonte para labels
   }
@@ -191,26 +192,26 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ul, ol {
-    margin-bottom: ${(props) => props.theme.spacing.medium};
-    padding-left: ${(props) => props.theme.spacing.medium};
+    margin-bottom: ${props => props.theme.spacing.medium};
+    padding-left: ${props => props.theme.spacing.medium};
     font-family: 'Open Sans', sans-serif; // Fonte para listas
   }
 
   li {
-    margin-bottom: ${(props) => props.theme.spacing.small};
+    margin-bottom: ${props => props.theme.spacing.small};
   }
 
   code {
     font-family: 'Open Sans', sans-serif; // Fonte para código
-    background-color: ${(props) => props.theme.colors.secondary};
-    padding: ${(props) => props.theme.spacing.small};
-    border-radius: ${(props) => props.theme.borderRadius.small};
+    background-color: ${props => props.theme.colors.secondary};
+    padding: ${props => props.theme.spacing.small};
+    border-radius: ${props => props.theme.borderRadius.small};
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 ${(props) => props.theme.spacing.medium};
+    padding: 0 ${props => props.theme.spacing.medium};
   }
 
   .text-center {
@@ -218,21 +219,21 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .text-primary {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${props => props.theme.colors.primary};
   }
 
   .text-secondary {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 
   .bg-primary {
-    background-color: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.light};
+    background-color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.light};
   }
 
   .bg-secondary {
-    background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.text};
+    background-color: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.text};
   }
 `;
 

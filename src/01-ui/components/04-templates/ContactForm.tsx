@@ -1,14 +1,6 @@
 // src/01-ui/components/04-templates/ContactForm.tsx
+import { Box, Typography, TextField, Button, Grid, Container } from '@mui/material';
 import React, { useState } from 'react';
-import {
-  Box,
-  Typography,
-  TextField,
-  Button,
-  Grid,
-  Container,
-  FormHelperText,
-} from '@mui/material';
 import { PatternFormat } from 'react-number-format'; // Importa PatternFormat para máscaras de texto
 
 interface ContactFormProps {
@@ -39,7 +31,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     const { name, value } = event.target;
 
     // Atualiza o estado do formulário
-    setFormData((prevData) => ({
+    setFormData(prevData => ({
       ...prevData,
       [name]: value,
     }));
@@ -61,16 +53,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
           !value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && value.trim() !== ''
             ? 'E-mail inválido.'
             : value.trim() === ''
-            ? 'O e-mail é obrigatório.'
-            : '';
+              ? 'O e-mail é obrigatório.'
+              : '';
         break;
       case 'phone':
         error =
           value.replace(/[^0-9]/g, '').length !== 11 && value.trim() !== ''
             ? 'Telefone inválido. Use o formato (99) 99999-9999.'
             : value.trim() === ''
-            ? 'O telefone é obrigatório.'
-            : '';
+              ? 'O telefone é obrigatório.'
+              : '';
         break;
       case 'subject':
         error = value.trim() === '' ? 'O assunto é obrigatório.' : '';
@@ -83,7 +75,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     }
 
     // Atualiza o estado de erros
-    setErrors((prevErrors) => ({
+    setErrors(prevErrors => ({
       ...prevErrors,
       [name]: error,
     }));
@@ -94,19 +86,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     const newErrors = {
       name: formData.name.trim() === '' ? 'O nome é obrigatório.' : '',
       email:
-        !formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) &&
-        formData.email.trim() !== ''
+        !formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && formData.email.trim() !== ''
           ? 'E-mail inválido.'
           : formData.email.trim() === ''
-          ? 'O e-mail é obrigatório.'
-          : '',
+            ? 'O e-mail é obrigatório.'
+            : '',
       phone:
-        formData.phone.replace(/[^0-9]/g, '').length !== 11 &&
-        formData.phone.trim() !== ''
+        formData.phone.replace(/[^0-9]/g, '').length !== 11 && formData.phone.trim() !== ''
           ? 'Telefone inválido. Use o formato (99) 99999-9999.'
           : formData.phone.trim() === ''
-          ? 'O telefone é obrigatório.'
-          : '',
+            ? 'O telefone é obrigatório.'
+            : '',
       subject: formData.subject.trim() === '' ? 'O assunto é obrigatório.' : '',
       message: formData.message.trim() === '' ? 'A mensagem é obrigatória.' : '',
     };
@@ -114,7 +104,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     setErrors(newErrors);
 
     // Retorna true se não houver erros
-    return Object.values(newErrors).every((error) => error === '');
+    return Object.values(newErrors).every(error => error === '');
   };
 
   // Função para enviar a mensagem via WhatsApp
@@ -133,7 +123,10 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
       `;
 
       // Redirecionar para o WhatsApp
-      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+        '_blank'
+      );
     }
   };
 
@@ -194,9 +187,9 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
                   label="Telefone"
                   name="phone"
                   value={formData.phone}
-                  onValueChange={(values) => {
+                  onValueChange={values => {
                     const { value } = values;
-                    setFormData((prevData) => ({
+                    setFormData(prevData => ({
                       ...prevData,
                       phone: value,
                     }));
@@ -252,7 +245,7 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
                   variant="contained"
                   color="primary"
                   sx={{ py: 1.5 }}
-                  disabled={!Object.values(errors).every((error) => error === '')}
+                  disabled={!Object.values(errors).every(error => error === '')}
                 >
                   Enviar
                 </Button>

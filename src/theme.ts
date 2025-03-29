@@ -34,7 +34,7 @@ export const lightTheme = {
   transitions: {
     default: 'all 0.3s ease-in-out', // Transição padrão
   },
-}
+};
 
 export const darkTheme = {
   colors: {
@@ -71,4 +71,4 @@ export const darkTheme = {
   transitions: {
     default: 'all 0.3s ease-in-out',
   },
-}
+};

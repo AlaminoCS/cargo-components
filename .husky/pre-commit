@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Verificando tipos do TypeScript..."
+npm run type-check
+
+echo "✨ Formatando código..."
+npm run format
+
+echo "✅ Todas as verificações passaram!" 

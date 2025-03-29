@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Toolbar,
@@ -11,13 +11,14 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { IPropsLinkAtom } from '../../../02-domain/interfaces/ILinkAtom';
-import LinkAtom from '../01-atoms/LinkAtom';
+import React, { useState } from 'react';
+
+import { IContactLink } from '../../../02-domain/interfaces/IHeaderProps';
 import { ContactNav } from '../../../04-assets/styles/styles';
+import LinkAtom from '../01-atoms/LinkAtom';
 
 interface IProps {
-  links: IPropsLinkAtom[];
+  links: IContactLink[];
 }
 
 const ContactNavMolecule: React.FC<IProps> = ({ links }) => {
@@ -29,13 +30,13 @@ const ContactNavMolecule: React.FC<IProps> = ({ links }) => {
 
   return (
     <ContactNav>
-      <AppBar position="static" sx={{backgroundColor: 'transparent'}}>
+      <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
         <Toolbar>
           {/* Links para desktop */}
           {!isMobile && (
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', gap: '1rem' }}>
               {links.map((item, index) => (
-                <LinkAtom key={index} text={item.text} icon={item.icon} href={item.href} />
+                <LinkAtom key={index} text={item.text} iconName={item.iconName} href={item.href} />
               ))}
             </Box>
           )}

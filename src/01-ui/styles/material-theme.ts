@@ -1,5 +1,6 @@
 // src/theme/material-theme.ts
 import { createTheme } from '@mui/material/styles';
+
 import { cargoComponentsTheme } from './theme';
 
 const theme = createTheme({

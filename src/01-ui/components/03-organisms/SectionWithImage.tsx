@@ -1,15 +1,16 @@
 // src/01-ui/components/03-organisms/SectionWithImage.tsx
+import { Typography } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
+
 import { ISectionWithImage } from '../../../02-domain/interfaces/ISectionWithImage';
 import ImageAtom from '../01-atoms/ImageAtom';
-import { Typography } from '@mui/material';
 
 // Estilização do componente
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
-  gap: ${(props) => props.theme.spacing.large};
+  gap: ${props => props.theme.spacing.large};
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -18,7 +19,7 @@ const SectionContainer = styled.section`
 
   .content {
     flex: 1;
-    text-align: ${(props) => props.theme.textAlign};
+    text-align: ${props => props.theme.textAlign};
   }
 
   .image-container {
@@ -30,17 +31,17 @@ const SectionContainer = styled.section`
     img {
       max-width: 100%;
       height: auto;
-      border-radius: ${(props) => props.theme.borderRadius.medium};
+      border-radius: ${props => props.theme.borderRadius.medium};
     }
   }
 
   h2 {
-    color: ${(props) => props.theme.colors.primary};
-    margin-bottom: ${(props) => props.theme.spacing.medium};
+    color: ${props => props.theme.colors.primary};
+    margin-bottom: ${props => props.theme.spacing.medium};
   }
 
   p {
-    color: ${(props) => props.theme.colors.text};
+    color: ${props => props.theme.colors.text};
   }
 `;
 

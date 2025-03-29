@@ -7,7 +7,7 @@ const StyledMap = styled.iframe`
   width: 100%;
   height: 400px;
   border: none;
-  border-radius: ${(props) => props.theme.borderRadius.medium};
+  border-radius: ${props => props.theme.borderRadius.medium};
 `;
 
 interface MapAtomProps {

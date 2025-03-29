@@ -1,4 +1,4 @@
 export interface IContentTitleTextMol {
-  title: string
-  text: string
+  title: string;
+  text: string;
 }

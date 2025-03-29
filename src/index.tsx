@@ -1,5 +1,4 @@
 // src/index.tsx
-export { default as Button } from './Button';
 export { lightTheme, darkTheme } from './theme';
 export { default as GlobalStyles } from './04-assets/styles/GlobalStyles';
 export { default as ContactNavMolecule } from './01-ui/components/02-molecules/ContactNavMolecule';
@@ -22,10 +21,19 @@ export { default as SectionWhoWeAreTpl } from './01-ui/components/04-templates/S
 export { default as ContactForm } from './01-ui/components/04-templates/ContactForm';
 export { default as SectionWithImages } from './01-ui/components/04-templates/SectionWithImages';
 export { default as Footer } from './01-ui/components/04-templates/Footer';
+export { default as WhatsAppButtonAtom } from './01-ui/components/01-atoms/WhatsAppButtonAtom';
 
 // Exportar interfaces
-export type { IContactLink, IMainLink, IBanner, IHeaderProps } from './02-domain/interfaces/IHeaderProps';
-export type { IService, ISectionOurServicesProps } from './02-domain/interfaces/ISectionOurServices';
+export type {
+  IContactLink,
+  IMainLink,
+  IBanner,
+  IHeaderProps,
+} from './02-domain/interfaces/IHeaderProps';
+export type {
+  IService,
+  ISectionOurServicesProps,
+} from './02-domain/interfaces/ISectionOurServices';
 export type { ISectionContainerImageProps } from './02-domain/interfaces/ISectionContainerImageProps';
 export type { ISectionDifferentialsProps } from './02-domain/interfaces/ISectionDifferentialsProps';
 export type { ISectionWhoWeAreProps } from './02-domain/interfaces/ISectionWhoWeAreProps';

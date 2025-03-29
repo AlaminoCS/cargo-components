@@ -1,9 +1,9 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Typography } from '@mui/material';
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import { Typography } from '@mui/material';
 
 // Tipagem dos dados do banner
 interface Banner {
@@ -30,7 +30,7 @@ const CarouselContainer = styled.div`
     align-items: center;
 
     > div {
-      width: 100%; 
+      width: 100%;
     }
   }
 
@@ -50,15 +50,16 @@ const CarouselContainer = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 1;    
+      z-index: 1;
     }
 
-    h2, p {
+    h2,
+    p {
       position: absolute;
       left: 0;
       right: 0;
       margin: 0 auto;
-      z-index: 2;      
+      z-index: 2;
       padding: 10px 20px;
       color: #fff;
     }
@@ -97,9 +98,9 @@ const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
         {banners.map((banner, index) => (
           <div key={index} className="banner">
             <img src={banner.imageUrl} alt={banner.title} />
-              <Typography variant="h2" align="center" gutterBottom>
-                {banner.title}
-              </Typography>
+            <Typography variant="h2" align="center" gutterBottom>
+              {banner.title}
+            </Typography>
             <p>{banner.description}</p>
           </div>
         ))}

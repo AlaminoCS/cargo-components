@@ -1,10 +1,8 @@
-import { JSX } from "react";
-
 // src/02-domain/interfaces/IHeaderProps.ts
 export interface IContactLink {
   text: string; // Texto do link
   href: string; // URL do link
-  icon: JSX.Element; // Ícone do link
+  iconName: 'Email' | 'Phone' | 'LocationOn'; // Nome do ícone
 }
 
 export interface IMainLink {
@@ -23,4 +21,5 @@ export interface IHeaderProps {
   mainLinks: IMainLink[]; // Links principais
   logoSrc: string; // URL do logo
   banners: IBanner[]; // Dados dos banners
+  iconName: 'Email' | 'Phone' | 'LocationOn'; // Nome do ícone
 }

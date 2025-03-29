@@ -2,7 +2,7 @@
 export interface IService {
   image: string; // URL da imagem
   title: string; // Título do serviço
-  description: string; // Descrição do serviço  
+  description: string; // Descrição do serviço
 }
 
 export interface ISectionOurServicesProps {

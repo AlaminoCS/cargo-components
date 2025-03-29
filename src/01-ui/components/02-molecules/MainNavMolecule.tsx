@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Toolbar,
@@ -13,7 +13,8 @@ import {
   useTheme,
   Container,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
+
 import { IPropsLinkAtom } from '../../../02-domain/interfaces/ILinkAtom';
 import LinkAtom from '../01-atoms/LinkAtom';
 
@@ -67,7 +68,7 @@ const MainNavMolecule: React.FC<IProps> = ({ logoSrc, links }) => {
           {!isMobile && (
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', gap: '1rem' }}>
               {links.map((item, index) => (
-                <LinkAtom key={index} text={item.text} icon={item.icon} href={item.href} />
+                <LinkAtom key={index} text={item.text} iconName={item.iconName} href={item.href} />
               ))}
             </Box>
           )}

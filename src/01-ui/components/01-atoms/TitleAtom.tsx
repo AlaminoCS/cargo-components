@@ -1,17 +1,18 @@
-import { Typography } from "@mui/material"
+import React from 'react';
+import { Typography } from '@mui/material';
 
 interface ITitleProps {
-  text: string
+  text: string;
 }
 
-const TitleAtom: React.FC<ITitleProps> = (props) => {
-  const { text } = props
+const TitleAtom: React.FC<ITitleProps> = props => {
+  const { text } = props;
 
   return (
     <Typography variant="h1" align="left" gutterBottom>
       {text}
     </Typography>
-  )
-}
+  );
+};
 
-export default TitleAtom
+export default TitleAtom;

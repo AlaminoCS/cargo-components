@@ -1,14 +1,10 @@
-import React, { createContext, useContext, ReactElement } from 'react';
+import React, { createContext, useContext } from 'react';
 
+import { IContactLink } from '../02-domain/interfaces/IHeaderProps';
 
 // Tipagem dos dados
 interface TopNavContextType {
-  contactLinks: {
-    text: string;
-    href: string;
-    icon?: ReactElement;
-    target?: string
-  }[];
+  contactLinks: IContactLink[];
   mainLinks: {
     text: string;
     href: string;
@@ -29,6 +25,9 @@ export const useTopNavContext = () => {
 };
 
 // Provider para envolver os componentes
-export const TopNavProvider: React.FC<{ value: TopNavContextType; children: React.ReactNode }> = ({ value, children }) => {
+export const TopNavProvider: React.FC<{ value: TopNavContextType; children: React.ReactNode }> = ({
+  value,
+  children,
+}) => {
   return <TopNavContext.Provider value={value}>{children}</TopNavContext.Provider>;
 };

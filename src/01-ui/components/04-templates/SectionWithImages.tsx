@@ -1,24 +1,23 @@
-// src/components/04-templates/SectionWithImages.tsx
-import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
+import React from 'react';
 
 interface SectionWithImagesProps {
   text: string;
-  images: string[]; // Array de URLs das imagens
+  title: string;
+  images: string[];
 }
 
-const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images }) => {
+const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images, title }) => {
   return (
     <section>
-      <Box sx={{ py: 8, px: 4, }}>
-        {/* Texto */}
-        <p style={{ maxWidth: '800px', textAlign: "center", margin: '0 auto 4rem auto' }}>
-          {text}
-        </p>
+      <Box sx={{ py: 8, px: 4 }}>
+        <Typography variant="h2" align="center" gutterBottom>
+          {title}
+        </Typography>
 
-        {/* Container para as imagens */}
+        <p style={{ maxWidth: '800px', textAlign: 'center', margin: '0 auto 4rem auto' }}>{text}</p>
+
         <Grid container spacing={4}>
-          {/* Coluna da esquerda (1 imagem) */}
           <Grid item xs={12} md={6}>
             <Box
               sx={{
@@ -27,15 +26,15 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images }) =
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                position: 'relative', // Adicionado para suportar hover
+                position: 'relative',
               }}
             >
               <Box
                 sx={{
                   maxWidth: '100%',
-                  transition: 'transform 0.3s ease-in-out', // Efeito de transição
+                  transition: 'transform 0.3s ease-in-out',
                   '&:hover': {
-                    transform: { xs: 'none', md: 'scale(1.1)' }, // Efeito de zoom no hover
+                    transform: { xs: 'none', md: 'scale(1.1)' },
                   },
                 }}
               >
@@ -53,7 +52,6 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images }) =
             </Box>
           </Grid>
 
-          {/* Coluna da direita (3 imagens sobrepostas no desktop) */}
           <Grid item xs={12} md={6}>
             <Box
               sx={{
@@ -69,35 +67,32 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images }) =
                 let imageStyles = {};
 
                 if (index === 0) {
-                  // Estilo para a primeira imagem
                   imageStyles = {
                     position: { xs: 'static', md: 'absolute' },
                     top: { xs: undefined, md: 0 },
                     left: { xs: undefined, md: '-30px' },
                     zIndex: { xs: undefined, md: 10 },
-                    maxWidth: { xs: '100%', md: '70%' }, // Primeira imagem menor
+                    maxWidth: { xs: '100%', md: '70%' },
                     transition: 'transform 0.3s ease-in-out',
-                    mb: { xs: 2, md: 0 }, // Margem inferior no mobile
+                    mb: { xs: 2, md: 0 },
                     '&:hover': {
                       transform: { xs: 'none', md: 'scale(1.1)' },
                     },
                   };
                 } else if (index === 1) {
-                  // Estilo para a segunda imagem
                   imageStyles = {
                     position: { xs: 'static', md: 'absolute' },
                     top: { xs: undefined, md: '90px' },
                     left: { xs: undefined, md: '140px' },
                     zIndex: { xs: undefined, md: 11 },
-                    maxWidth: { xs: '100%', md: '80%' }, // Segunda imagem maior
+                    maxWidth: { xs: '100%', md: '80%' },
                     transition: 'transform 0.3s ease-in-out',
-                    mb: { xs: 2, md: 0 }, // Margem inferior no mobile
+                    mb: { xs: 2, md: 0 },
                     '&:hover': {
                       transform: { xs: 'none', md: 'scale(1.1)' },
                     },
                   };
                 } else if (index === 2) {
-                  // Estilo para a terceira imagem
                   imageStyles = {
                     position: { xs: 'static', md: 'absolute' },
                     top: { xs: undefined, md: '400px' },
@@ -105,7 +100,7 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images }) =
                     zIndex: { xs: undefined, md: 12 },
                     maxWidth: { xs: '100%', md: '80%' },
                     transition: 'transform 0.3s ease-in-out',
-                    mb: { xs: 2, md: 0 }, // Margem inferior no mobile
+                    mb: { xs: 2, md: 0 },
                     '&:hover': {
                       transform: { xs: 'none', md: 'scale(1.1)' },
                     },

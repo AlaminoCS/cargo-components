@@ -1,8 +1,9 @@
-import React from 'react';
 import { Box } from '@mui/material';
+import React from 'react';
+
+import { useTopNavContext } from '../../../05-contexts/TopNavContext';
 import ContactNavMolecule from '../02-molecules/ContactNavMolecule';
 import MainNavMolecule from '../02-molecules/MainNavMolecule';
-import { useTopNavContext } from '../../../05-contexts/TopNavContext';
 
 const TopNavOrg: React.FC = () => {
   const { contactLinks, mainLinks, logoSrc } = useTopNavContext();

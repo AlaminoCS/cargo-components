@@ -1,9 +1,10 @@
 // src/01-ui/components/02-molecules/ContentCarouselMol.tsx
+import { Typography } from '@mui/material';
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
+
 import { IOurServices } from '../../../02-domain/interfaces/IOurServices';
-import { Typography } from '@mui/material';
 
 // Props do componente
 interface ContentCarouselMolProps {
@@ -27,7 +28,7 @@ const CarouselContainer = styled.div`
   }
 
   .card {
-    background-color: ${(props) => props.theme.colors.background};    
+    background-color: ${props => props.theme.colors.background};
     text-align: center;
     max-width: 300px;
     width: 100%;
@@ -46,15 +47,15 @@ const CarouselContainer = styled.div`
     img {
       width: 100%;
       height: auto;
-      border-radius: ${(props) => props.theme.borderRadius.medium};
+      border-radius: ${props => props.theme.borderRadius.medium};
     }
 
     h4 {
-      margin: ${(props) => props.theme.spacing.medium} 0;
+      margin: ${props => props.theme.spacing.medium} 0;
     }
 
     p {
-      color: ${(props) => props.theme.colors.text};
+      color: ${props => props.theme.colors.text};
       font-size: 16px !important;
     }
   }
@@ -96,7 +97,7 @@ const ContentCarouselMol: React.FC<ContentCarouselMolProps> = ({ services }) => 
             <figure>
               <img src={item.image} alt={item.title} />
             </figure>
-            <div className='content'>
+            <div className="content">
               <Typography variant="h4" align="center" gutterBottom>
                 {item.title}
               </Typography>
@@ -104,7 +105,7 @@ const ContentCarouselMol: React.FC<ContentCarouselMolProps> = ({ services }) => 
               <Typography variant="body1" align="left" paragraph>
                 {item.description}
               </Typography>
-            </div>            
+            </div>
           </div>
         ))}
       </Slider>

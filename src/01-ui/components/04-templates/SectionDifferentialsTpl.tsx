@@ -1,7 +1,8 @@
-import React from 'react';
-import SectionWithImage from '../03-organisms/SectionWithImage';
-import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISectionDifferentialsProps';
 import { Container } from '@mui/material';
+import React from 'react';
+
+import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISectionDifferentialsProps';
+import SectionWithImage from '../03-organisms/SectionWithImage';
 
 const SectionDifferentialsTpl: React.FC<ISectionDifferentialsProps> = ({ sectionData }) => {
   return (
@@ -10,7 +11,7 @@ const SectionDifferentialsTpl: React.FC<ISectionDifferentialsProps> = ({ section
         <SectionWithImage {...sectionData} />
       </Container>
     </section>
-  )
+  );
 };
 
 export default SectionDifferentialsTpl;
