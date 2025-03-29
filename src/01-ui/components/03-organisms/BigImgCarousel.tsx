@@ -30,8 +30,8 @@ const CarouselContainer = styled('div')({
     alignItems: 'center',
 
     '> div': {
-      width: '100%'
-    }
+      width: '100%',
+    },
   },
 
   '.banner': {
@@ -41,16 +41,16 @@ const CarouselContainer = styled('div')({
     backgroundPosition: 'center',
     color: 'white',
     textAlign: 'center',
-    overflow: 'hidden', /* Garante que o conteúdo não ultrapasse o banner */
+    overflow: 'hidden' /* Garante que o conteúdo não ultrapasse o banner */,
 
-    'img': {
+    img: {
       position: 'absolute',
       top: '0',
       left: '0',
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      zIndex: '1'
+      zIndex: '1',
     },
 
     'h2, p': {
@@ -60,23 +60,23 @@ const CarouselContainer = styled('div')({
       margin: '0 auto',
       zIndex: '2',
       padding: '10px 20px',
-      color: '#fff'
+      color: '#fff',
     },
 
-    'h2': {
+    h2: {
       fontSize: '3rem',
       bottom: '60px',
 
       '@media (max-width: 768px)': {
-        bottom: '120px'
-      }
+        bottom: '120px',
+      },
     },
 
-    'p': {
+    p: {
       fontSize: '1.6rem',
-      bottom: '20px'
-    }
-  }
+      bottom: '20px',
+    },
+  },
 });
 
 const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
@@ -92,7 +92,7 @@ const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
   };
 
   return (
-    <CarouselContainer>
+    <CarouselContainer data-testid="carousel-container">
       <Slider {...settings}>
         {banners.map((banner, index) => (
           <div key={index} className="banner">

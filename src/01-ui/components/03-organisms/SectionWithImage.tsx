@@ -55,10 +55,10 @@ const SectionWithImage: React.FC<ISectionWithImage> = ({
     <SectionContainer>
       {imagePosition === 'left' && (
         <>
-          <div className="image-container">
+          <div className="image-container" data-testid="image-container">
             <ImageAtom src={image.src} alt={image.alt} />
           </div>
-          <div className="content">
+          <div className="content" data-testid="content">
             <Typography variant="h2" align="left" gutterBottom>
               {title}
             </Typography>
@@ -68,13 +68,13 @@ const SectionWithImage: React.FC<ISectionWithImage> = ({
       )}
       {imagePosition === 'right' && (
         <>
-          <div className="content">
+          <div className="content" data-testid="content">
             <Typography variant="h2" align="left" gutterBottom>
               {title}
             </Typography>
             <div dangerouslySetInnerHTML={{ __html: description }} />
           </div>
-          <div className="image-container">
+          <div className="image-container" data-testid="image-container">
             <ImageAtom src={image.src} alt={image.alt} />
           </div>
         </>

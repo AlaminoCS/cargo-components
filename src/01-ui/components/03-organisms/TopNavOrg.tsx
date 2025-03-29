@@ -10,6 +10,7 @@ const TopNavOrg: React.FC = () => {
 
   return (
     <Box
+      data-testid="top-nav-box"
       sx={{
         position: 'fixed',
         top: 0,
