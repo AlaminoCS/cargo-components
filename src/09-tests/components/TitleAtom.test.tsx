@@ -6,7 +6,7 @@ describe('TitleAtom', () => {
   it('should render the title text correctly', () => {
     const testText = 'Test Title';
     render(<TitleAtom text={testText} />);
-    
+
     const titleElement = screen.getByText(testText);
     expect(titleElement).toBeInTheDocument();
     expect(titleElement.tagName).toBe('H1');
@@ -15,8 +15,8 @@ describe('TitleAtom', () => {
   it('should render with left alignment', () => {
     const testText = 'Test Title';
     render(<TitleAtom text={testText} />);
-    
+
     const titleElement = screen.getByText(testText);
     expect(titleElement).toHaveStyle({ textAlign: 'left' });
   });
-}); 
+});
