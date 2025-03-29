@@ -18,67 +18,66 @@ interface BigImgCarouselProps {
 }
 
 // Estilização do carrossel
-const CarouselContainer = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1200px;
-  margin-top: 113px;
+const CarouselContainer = styled('div')({
+  width: '100%',
+  margin: '0 auto',
+  maxWidth: '1200px',
+  marginTop: '113px',
 
-  .slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  '.slick-slide': {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 
-    > div {
-      width: 100%;
+    '> div': {
+      width: '100%'
     }
-  }
+  },
 
-  .banner {
-    position: relative;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse o banner */
+  '.banner': {
+    position: 'relative',
+    height: '400px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: 'white',
+    textAlign: 'center',
+    overflow: 'hidden', /* Garante que o conteúdo não ultrapasse o banner */
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
+    'img': {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: '1'
+    },
 
-    h2,
-    p {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      z-index: 2;
-      padding: 10px 20px;
-      color: #fff;
-    }
+    'h2, p': {
+      position: 'absolute',
+      left: '0',
+      right: '0',
+      margin: '0 auto',
+      zIndex: '2',
+      padding: '10px 20px',
+      color: '#fff'
+    },
 
-    h2 {
-      font-size: 3rem;
-      bottom: 60px;
+    'h2': {
+      fontSize: '3rem',
+      bottom: '60px',
 
-      @media (max-width: 768px) {
-        bottom: 120px;
+      '@media (max-width: 768px)': {
+        bottom: '120px'
       }
-    }
+    },
 
-    p {
-      font-size: 1.6rem;
-      bottom: 20px;
+    'p': {
+      fontSize: '1.6rem',
+      bottom: '20px'
     }
   }
-`;
+});
 
 const BigImgCarousel: React.FC<BigImgCarouselProps> = ({ banners }) => {
   // Configurações do Slick Carousel
