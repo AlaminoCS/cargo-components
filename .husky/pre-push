@@ -1,4 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run type-check 
+echo "🔍 Executando verificação de tipos do TypeScript..."
+npm run type-check || { echo "❌ Verificação de tipos falhou!"; exit 1; }
+
+echo "🧪 Executando testes unitários..."
+npm run test || { echo "❌ Testes unitários falharam!"; exit 1; }
+
+echo "📊 Verificando cobertura de testes..."
+npm run coverage || { echo "❌ Cobertura de testes abaixo do mínimo aceitável!"; exit 1; }
+
+echo "✨ Formatando código antes do push..."
+npm run format
+
+echo "✅ Todas as verificações passaram! Enviando código para o repositório remoto..."
