@@ -1,6 +1,6 @@
 {
   "name": "cargo-components",
-  "private": true,
+  "private": false,
   "version": "1.1.6",
   "type": "module",
   "scripts": {
