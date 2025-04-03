@@ -67,7 +67,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   footer {
-    strong {
+    strong, a, i, h1, h2, h3, h4, h5, h6 {
       color: #FFA500 !important;
     }
   }

@@ -1,5 +1,3 @@
-/* global console */
-// src/components/04-templates/Footer.tsx
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -19,12 +17,19 @@ import {
   List,
   ListItem,
   ListItemText,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react';
-
 import { IFooterProps } from '../../../02-domain/interfaces/IFooterProps';
 import SocialMediaIcon from '../01-atoms/SocialMediaIcon';
+import PrivacyPolicy from './modal-content/PrivacyPolicy';
+import TermsOfUse from './modal-content/TermsOfUse';
+import CookiePolicy from './modal-content/CookiePolicy';
+import LGPDPolicy from './modal-content/LGPDPolicy';
 
 const SocialIconButton = styled(IconButton)(({ theme }) => ({
   color: '#fff',
@@ -49,11 +54,46 @@ const Footer: React.FC<IFooterProps> = ({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [email, setEmail] = useState('');
+  const [openModal, setOpenModal] = useState<string | null>(null);
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implementar lógica de newsletter
     console.log('Newsletter subscription:', email);
+  };
+
+  const handleOpenModal = (modalType: string) => {
+    setOpenModal(modalType);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(null);
+  };
+
+  const getModalContent = (type: string) => {
+    switch (type) {
+      case 'privacy':
+        return {
+          title: 'Política de Privacidade',
+          content: <PrivacyPolicy />
+        };
+      case 'terms':
+        return {
+          title: 'Termos de Uso',
+          content: <TermsOfUse />
+        };
+      case 'cookies':
+        return {
+          title: 'Política de Cookies',
+          content: <CookiePolicy />
+        };
+      case 'lgpd':
+        return {
+          title: 'Lei Geral de Proteção de Dados (LGPD)',
+          content: <LGPDPolicy />
+        };
+      default:
+        return { title: '', content: '' };
+    }
   };
 
   return (
@@ -61,7 +101,7 @@ const Footer: React.FC<IFooterProps> = ({
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Informações da Empresa */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{xs: 12, md: 4}}>
             <Typography variant="h6" gutterBottom>
               {companyName}
             </Typography>
@@ -86,7 +126,7 @@ const Footer: React.FC<IFooterProps> = ({
           </Grid>
 
           {/* Informações de Contato */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{xs: 12, md: 4}}>
             <Typography variant="h6" gutterBottom>
               Contato
             </Typography>
@@ -123,7 +163,7 @@ const Footer: React.FC<IFooterProps> = ({
 
           {/* Newsletter */}
           {newsletter && (
-            <Grid item xs={12} md={4}>
+            <Grid size={{xs: 12, md: 4}}>
               <Typography variant="h6" gutterBottom>
                 {newsletter.title}
               </Typography>
@@ -169,7 +209,7 @@ const Footer: React.FC<IFooterProps> = ({
 
           {/* Links */}
           {columns.map((column, index) => (
-            <Grid item xs={6} md={2} key={index}>
+            <Grid size={{xs: 6, md: 2}} key={index}>
               <Typography variant="h6" gutterBottom>
                 {column.title}
               </Typography>
@@ -200,7 +240,7 @@ const Footer: React.FC<IFooterProps> = ({
 
         {/* Rodapé Legal e Créditos */}
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid size={{xs: 12, md: 6}}>
             <Box
               sx={{
                 display: 'flex',
@@ -210,26 +250,36 @@ const Footer: React.FC<IFooterProps> = ({
               }}
             >
               <Link
-                href={legal.privacyPolicy}
+                component="button"
+                onClick={() => handleOpenModal('privacy')}
                 sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
               >
                 Política de Privacidade
               </Link>
               <Link
-                href={legal.termsOfService}
+                component="button"
+                onClick={() => handleOpenModal('terms')}
                 sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
               >
                 Termos de Uso
               </Link>
               <Link
-                href={legal.cookiePolicy}
+                component="button"
+                onClick={() => handleOpenModal('cookies')}
                 sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
               >
                 Política de Cookies
               </Link>
+              <Link
+                component="button"
+                onClick={() => handleOpenModal('lgpd')}
+                sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
+              >
+                LGPD
+              </Link>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{xs: 12, md: 6}}>
             <Typography
               variant="body2"
               align={isMobile ? 'center' : 'right'}
@@ -249,6 +299,27 @@ const Footer: React.FC<IFooterProps> = ({
             </Typography>
           </Grid>
         </Grid>
+
+        {/* Modal Dialog */}
+        <Dialog
+          open={openModal !== null}
+          onClose={handleCloseModal}
+          maxWidth="md"
+          fullWidth
+        >
+          {openModal && (
+            <>              
+              <DialogContent>
+                {getModalContent(openModal).content}
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleCloseModal} color="primary">
+                  Fechar
+                </Button>
+              </DialogActions>
+            </>
+          )}
+        </Dialog>
       </Container>
     </Box>
   );

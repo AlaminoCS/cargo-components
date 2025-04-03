@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* global window */
+=======
+>>>>>>> feature/lgpd-policies
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Fab, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';

@@ -11,14 +11,22 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images, tit
   return (
     <section>
       <Box sx={{ py: 8, px: 4 }}>
+<<<<<<< HEAD
         <Typography variant="h2" align="center" gutterBottom>
+=======
+        <Typography variant="h3" align="center" gutterBottom>
+>>>>>>> feature/lgpd-policies
           {title}
         </Typography>
 
         <p style={{ maxWidth: '800px', textAlign: 'center', margin: '0 auto 4rem auto' }}>{text}</p>
 
         <Grid container spacing={4}>
+<<<<<<< HEAD
           <Grid item xs={12} md={6}>
+=======
+          <Grid size={{xs: 12, md: 6}}>
+>>>>>>> feature/lgpd-policies
             <Box
               sx={{
                 width: '100%',
@@ -52,7 +60,11 @@ const SectionWithImages: React.FC<SectionWithImagesProps> = ({ text, images, tit
             </Box>
           </Grid>
 
+<<<<<<< HEAD
           <Grid item xs={12} md={6}>
+=======
+          <Grid size={{xs: 12, md: 6}}>
+>>>>>>> feature/lgpd-policies
             <Box
               sx={{
                 position: 'relative',

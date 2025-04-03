@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // src/02-domain/interfaces/ISectionLocation.ts
+=======
+>>>>>>> feature/lgpd-policies
 export interface ILocation {
   title: string;
   text: string;
