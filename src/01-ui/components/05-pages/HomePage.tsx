@@ -14,7 +14,7 @@ import { ISectionOurServicesProps, IService } from '../../../02-domain/interface
 import { ISectionDifferentialsProps } from '../../../02-domain/interfaces/ISectionDifferentialsProps';
 import { ISectionWhoWeAreProps } from '../../../02-domain/interfaces/ISectionWhoWeAreProps';
 import ContactForm from '../04-templates/ContactForm';
-import SectionWithImages from '../04-templates/SectionWithImages'; // Importa o novo componente
+import SectionWithImages from '../04-templates/SectionWithImages';
 import Footer from '../04-templates/Footer';
 
 const HomePage = () => {
@@ -131,8 +131,7 @@ const HomePage = () => {
       },
     ],
     id: 'localizacao',
-  };
-  
+  };  
 
   const ourServices: IService[] = [
     {
@@ -254,6 +253,76 @@ const HomePage = () => {
       'Olá! Vim através do seu site e gostaria de mais informações sobre os serviços da Park&Co.',
   };
 
+  const socialMediaLinks = [
+    {
+      name: 'Facebook',
+      url: 'https://facebook.com/cargotransportes',
+    },
+    {
+      name: 'Instagram',
+      url: 'https://instagram.com/cargotransportes',
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/company/cargotransportes',
+    },
+    {
+      name: 'YouTube',
+      url: 'https://youtube.com/cargotransportes',
+    },
+  ];
+
+  const footerData = {
+    companyName: 'Park&Co',
+    companyDescription:
+      'Oferecemos soluções completas em estacionamento, com tecnologia avançada e atendimento personalizado para garantir a melhor experiência aos nossos clientes.',
+  
+    contact: {
+      address: 'Avenida Comendador Pereira Inácio, 900 - Jardim Vergueiro, Sorocaba/SP',
+      phone: '(15) 98137-7293',
+      email: 'contato@parkandco.com',
+      businessHours: ['Segunda a Sexta: 08h às 18h', 'Sábado: 09h às 13h', 'Domingo: Fechado'],
+    },
+  
+    columns: [
+      {
+        title: 'Institucional',
+        links: [
+          { text: 'Início', href: '#home' },
+          { text: 'Serviços', href: '#servicos' },
+          { text: 'Sobre Nós', href: '#quem-somos' },
+          { text: 'Nossos diferenciais', href: '#nossos-diferenciais' },
+          { text: 'Localização', href: '#localizacao' },
+          { text: 'Contato', href: '#contato' },
+        ],
+      },
+      {
+        title: 'Serviços',
+        links: [
+          { text: 'Estacionamento', href: '#' },
+          { text: 'Valet', href: '#' },
+          { text: 'Gestão de Frotas', href: '#' },
+          { text: 'Consultoria', href: '#' },
+        ],
+      },
+    ],
+    legal: {
+      privacyPolicy: '/privacidade',
+      termsOfService: '/termos',
+      cookiePolicy: '/cookies',
+    },
+    developerInfo: {
+      name: 'Alamino Code Solutions',
+      website: 'https://alaminocode.com',
+    },
+    newsletter: {
+      title: 'Fique por dentro!',
+      description: 'Assine nossa newsletter e receba novidades e promoções exclusivas.',
+      buttonText: 'Assinar',
+    },
+  };
+  
+
   return (
     <>
       <HeaderTpl {...headerData} />
@@ -265,7 +334,13 @@ const HomePage = () => {
       <ContactForm phoneNumber={whatsappData.phoneNumber} />
       <SectionWithImages {...sectionWithImagesData} />
       <WhatsAppButtonAtom {...whatsappData} />
-      <Footer />
+      <Footer
+        socialMedia={socialMediaLinks.map(link => ({
+          ...link,
+          iconName: link.name as 'Facebook' | 'Instagram' | 'LinkedIn' | 'YouTube',
+        }))}
+        {...footerData}
+      />
     </>
   );
 };

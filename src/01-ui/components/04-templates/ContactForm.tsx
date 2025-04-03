@@ -1,4 +1,3 @@
-// src/01-ui/components/04-templates/ContactForm.tsx
 import React, { useState } from 'react';
 import {
   Box,
@@ -9,14 +8,13 @@ import {
   Container,
   FormHelperText,
 } from '@mui/material';
-import { PatternFormat } from 'react-number-format'; // Importa PatternFormat para máscaras de texto
+import { PatternFormat } from 'react-number-format';
 
 interface ContactFormProps {
-  phoneNumber: string; // Propriedade para o número de telefone
+  phoneNumber: string;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
-  // Estado para armazenar os valores dos campos do formulário
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +23,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     message: '',
   });
 
-  // Estado para armazenar os erros de validação
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -34,21 +31,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     message: '',
   });
 
-  // Função para lidar com mudanças nos campos
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-
-    // Atualiza o estado do formulário
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-
-    // Valida o campo atual
     validateField(name, value);
   };
 
-  // Função para validar um campo específico
   const validateField = (name: string, value: string) => {
     let error = '';
 
@@ -82,14 +73,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
         break;
     }
 
-    // Atualiza o estado de erros
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
     }));
   };
 
-  // Função para validar todo o formulário
   const validateForm = () => {
     const newErrors = {
       name: formData.name.trim() === '' ? 'O nome é obrigatório.' : '',
@@ -112,18 +101,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ phoneNumber }) => {
     };
 
     setErrors(newErrors);
-
-    // Retorna true se não houver erros
     return Object.values(newErrors).every((error) => error === '');
   };
 
-  // Função para enviar a mensagem via WhatsApp
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Valida o formulário antes de enviar
     if (validateForm()) {
-      // Formatar a mensagem
       const whatsappMessage = `
 Olá, meu nome é *${formData.name}* e vim aqui através do seu site. Gostaria de falar sobre *${formData.subject}*. 
 
@@ -132,7 +116,6 @@ Olá, meu nome é *${formData.name}* e vim aqui através do seu site. Gostaria d
 Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${formData.email}*. Obrigado!
       `;
 
-      // Redirecionar para o WhatsApp
       window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
     }
   };
@@ -141,24 +124,22 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
     <section>
       <Container id="contato">
         <Box sx={{ my: 4 }}>
-          {/* Título */}
           <Typography variant="h2" align="left" gutterBottom>
             Escreva-nos
           </Typography>
 
-          {/* Formulário */}
           <Box
             component="form"
             onSubmit={handleSubmit}
             noValidate
             autoComplete="off"
             sx={{
-              '& .MuiTextField-root': { mb: 2 }, // Espaçamento entre os campos
+              '& .MuiTextField-root': { mb: 2 },
             }}
           >
             <Grid container spacing={2}>
               {/* Campo Nome */}
-              <Grid item xs={12} sm={6}>
+              <Grid size={{xs: 12, sm: 6}}>
                 <TextField
                   fullWidth
                   label="Nome"
@@ -172,7 +153,7 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
               </Grid>
 
               {/* Campo E-mail */}
-              <Grid item xs={12} sm={6}>
+              <Grid size={{xs: 12, sm: 6}}>
                 <TextField
                   fullWidth
                   label="E-mail"
@@ -187,7 +168,7 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
               </Grid>
 
               {/* Campo Telefone com Máscara */}
-              <Grid item xs={12} sm={6}>
+              <Grid size={{xs: 12, sm: 6}}>
                 <PatternFormat
                   customInput={TextField}
                   fullWidth
@@ -202,8 +183,8 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
                     }));
                     validateField('phone', value);
                   }}
-                  format="(##) #####-####" // Máscara de telefone
-                  mask="_" // Placeholder para cada caractere
+                  format="(##) #####-####"
+                  mask="_"
                   required
                   error={!!errors.phone}
                   helperText={errors.phone}
@@ -211,7 +192,7 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
               </Grid>
 
               {/* Campo Assunto */}
-              <Grid item xs={12} sm={6}>
+              <Grid size={{xs: 12, sm: 6}}>
                 <TextField
                   fullWidth
                   label="Assunto"
@@ -225,7 +206,7 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
               </Grid>
 
               {/* Campo Mensagem */}
-              <Grid item xs={12}>
+              <Grid size={{xs: 12}}>
                 <TextField
                   fullWidth
                   label="Mensagem"
@@ -242,10 +223,9 @@ Aguardo o seu contato através do meu telefone *${formData.phone}* ou e-mail *${
 
               {/* Botão Enviar */}
               <Grid
-                item
-                xs={12}
+                size={{xs: 12}}
                 container
-                justifyContent="flex-end" // Alinha o botão à direita
+                justifyContent="flex-end"
               >
                 <Button
                   type="submit"
