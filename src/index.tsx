@@ -22,6 +22,7 @@ export { default as SectionWhoWeAreTpl } from './01-ui/components/04-templates/S
 export { default as ContactForm } from './01-ui/components/04-templates/ContactForm';
 export { default as SectionWithImages } from './01-ui/components/04-templates/SectionWithImages';
 export { default as Footer } from './01-ui/components/04-templates/Footer';
+export { default as WhatsAppButtonAtom } from './01-ui/components/01-atoms/WhatsAppButtonAtom';
 
 // Exportar interfaces
 export type { IContactLink, IMainLink, IBanner, IHeaderProps } from './02-domain/interfaces/IHeaderProps';
