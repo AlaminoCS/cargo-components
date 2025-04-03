@@ -18,7 +18,6 @@ import {
   ListItem,
   ListItemText,
   Dialog,
-  DialogTitle,
   DialogContent,
   DialogActions,
 } from '@mui/material';
@@ -55,6 +54,7 @@ const Footer: React.FC<IFooterProps> = ({
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [email, setEmail] = useState('');
   const [openModal, setOpenModal] = useState<string | null>(null);
+  const stylesLink = { textDecoration: 'none', cursor: 'pointer' }
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -249,31 +249,27 @@ const Footer: React.FC<IFooterProps> = ({
                 justifyContent: isMobile ? 'center' : 'flex-start',
               }}
             >
-              <Link
-                component="button"
+              <Link                
                 onClick={() => handleOpenModal('privacy')}
-                sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
+                sx={stylesLink}
               >
                 Política de Privacidade
               </Link>
               <Link
-                component="button"
                 onClick={() => handleOpenModal('terms')}
-                sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
+                sx={stylesLink}
               >
                 Termos de Uso
               </Link>
               <Link
-                component="button"
                 onClick={() => handleOpenModal('cookies')}
-                sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
+                sx={stylesLink}
               >
                 Política de Cookies
               </Link>
               <Link
-                component="button"
                 onClick={() => handleOpenModal('lgpd')}
-                sx={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}
+                sx={stylesLink}
               >
                 LGPD
               </Link>
